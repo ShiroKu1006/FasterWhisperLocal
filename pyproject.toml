@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faster-whisper-local"
+version = "0.1.0"
+description = "Accuracy-first local large-v3 transcription for Windows"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "faster-whisper==1.2.1",
+    "ctranslate2==4.8.2",
+    "OpenCC==1.4.2",
+]
+
+[project.scripts]
+faster-whisper-local = "faster_whisper_local.cli:main"
+
+[tool.setuptools]
+packages = ["faster_whisper_local"]
+
+[tool.pytest.ini_options]
+addopts = "-p no:cacheprovider"
+testpaths = ["tests"]
+

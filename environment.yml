@@ -1,0 +1,10 @@
+name: faster-whisper
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -e .
+      - pytest==8.4.1
+
